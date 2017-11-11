@@ -1,0 +1,6 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/Users/Spark/cca175/spark2/src/main/resources/applestock.csv,/Users/Spark/cca175/spark2/target/scala-2.11/classes/applestock.csv)[0m
+[0m[[0mdebug[0m] [0m	(/Users/Spark/cca175/spark2/src/main/resources/customers.csv,/Users/Spark/cca175/spark2/target/scala-2.11/classes/customers.csv)[0m
+[0m[[0mdebug[0m] [0m	(/Users/Spark/cca175/spark2/src/main/resources/data.txt,/Users/Spark/cca175/spark2/target/scala-2.11/classes/data.txt)[0m
+[0m[[0mdebug[0m] [0m	(/Users/Spark/cca175/spark2/src/main/resources/sales.csv,/Users/Spark/cca175/spark2/target/scala-2.11/classes/sales.csv)[0m
+[0m[[0mdebug[0m] [0m	(/Users/Spark/cca175/spark2/src/main/resources/temp,/Users/Spark/cca175/spark2/target/scala-2.11/classes/temp)[0m

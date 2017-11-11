@@ -1,0 +1,4 @@
+[0m[[0minfo[0m] [0m:: delivering :: sparktw0#sparktw0_2.11;1.0 :: 1.0 :: release :: Fri Nov 03 01:08:01 CDT 2017[0m
+[0m[[0mdebug[0m] [0m	options = status=release pubdate=Fri Nov 03 01:08:01 CDT 2017 validate=true resolveDynamicRevisions=true merge=true resolveId=null pubBranch=null[0m
+[0m[[0minfo[0m] [0m	delivering ivy file to /Users/Spark/cca175/spark2/target/scala-2.11/ivy-1.0.xml[0m
+[0m[[0mdebug[0m] [0m	deliver done (11ms)[0m
