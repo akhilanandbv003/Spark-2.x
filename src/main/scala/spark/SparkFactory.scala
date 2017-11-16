@@ -11,14 +11,16 @@ object SparkFactory {
       .setMaster("local[*]")
       //.set("spark.cassandra.connection.host", "127.0.0.1")
       .set("spark.sql.streaming.checkpointLocation", "checkpoint")
+      .set("spark.driver.allowMultipleContexts" ,"true")
 
-    val sc = new SparkContext(conf)
-    sc.setLogLevel("WARN")
+
+
+      val sc = new SparkContext(conf)
+    sc.setLogLevel("INFO")
 
     SparkSession
       .builder()
       .getOrCreate()
-
   }
 
   def getSparkSession() = {
@@ -26,8 +28,9 @@ object SparkFactory {
       .builder()
       .getOrCreate()
   }
-  implicit val schema = StructType(Array(
-    StructField("id", StringType),
-    StructField("name", StringType)
-  ))
+
+  def stopSparkSession()={
+    SparkSession.clearActiveSession()
+  }
+
 }

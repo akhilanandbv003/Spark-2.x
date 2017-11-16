@@ -3,6 +3,7 @@ package sparkApps
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.streaming.OutputMode
 import org.apache.spark.sql.types.{StringType, StructField, StructType}
+import spark.SparkFactory
 
 
 object FilesAsStream {
@@ -34,5 +35,7 @@ object FilesAsStream {
     query.awaitTermination()
 
   }
+
+
 
 }
