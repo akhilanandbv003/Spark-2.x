@@ -33,7 +33,7 @@ object DataIngest {
     fileStreamDf
   }
 
-  def writeParquet(csvDataFrame: DataFrame) = {
+  def writeParquet(csvDataFrame: DataFrame)= {
 
     val write = csvDataFrame.writeStream
       .format("parquet") // can be "orc", "json", "csv", etc.

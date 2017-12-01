@@ -1,5 +1,6 @@
-package sparkApps
+package kafka
 
+import org.apache.avro.util.Utf8
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.streaming.OutputMode
 import org.apache.spark.sql.types.{StringType, StructField, StructType}
@@ -28,31 +29,22 @@ object SparkConsumer {
       .appName("Consumer")
       .getOrCreate()
 
-    val schema = StructType(Array(
-      StructField("id", StringType),
-      StructField("name", StringType)
-    ))
     import sparkSession.implicits._
-
-    val df = sparkSession
+    val query = sparkSession
       .readStream
       .format("kafka")
       .option("kafka.bootstrap.servers", "localhost:9092")
       .option("subscribe", "gziptopic")
-      .option("startingOffsets", "earliest")
       .load()
-
-    val df1 = df.selectExpr("CAST(value AS STRING)").as[String]
-
-
-    val query = df1.writeStream
+      .select($"value".as[String])
+      .map(d => {
+        val name = d.toString
+        name
+      })
+      .writeStream
+      .outputMode("append")
       .format("console")
-      .option("truncate", "false")
-        .outputMode(OutputMode.Append())
       .start()
-
     query.awaitTermination()
-
   }
-
 }
